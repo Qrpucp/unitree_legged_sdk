@@ -11,6 +11,19 @@ set(EXTRA_LIBS -pthread libunitree_legged_sdk_amd64.so lcm)
 
 set(CMAKE_CXX_FLAGS "-O3")
 
+add_library(${PROJECT_NAME}
+    src/empty.cpp
+)
+
+target_include_directories(${PROJECT_NAME} INTERFACE
+    include
+)
+
+target_link_libraries(${PROJECT_NAME} INTERFACE
+    ${PROJECT_SOURCE_DIR}/lib/libunitree_legged_sdk_amd64.so
+    lcm
+)
+
 # one pc one process
 add_executable(example_position examples/example_position.cpp)
 target_link_libraries(example_position ${EXTRA_LIBS})
