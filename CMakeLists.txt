@@ -66,10 +66,10 @@ target_link_libraries(lcm_server ${EXTRA_LIBS})
 
 
 install(TARGETS 
-${PROJECT_NAME} EXPORT unitree_legged_sdkconfig
+${PROJECT_NAME} EXPORT unitree_legged_sdk-config
   DESTINATION ${UNITREE_LIB_INSTALL_DIR})
 
-install(EXPORT unitree_legged_sdkconfig DESTINATION share/${PROJECT_NAME}/cmake)
+install(EXPORT unitree_legged_sdk-config DESTINATION share/${PROJECT_NAME}/cmake)
 
 install(FILES
   ${UNITREE_HEADERS}
